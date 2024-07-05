@@ -6,6 +6,7 @@ import { fileURLToPath } from "url";
 import path from "path";
 import proyectosRouter from "./src/routes/proyecto.routes.js";
 import certificadosRouter from "./src/routes/certificado.routes.js";
+import consultasRouter from "./src/routes/consulta.routes.js";
 import './src/database/database.js'
 
 const app = express();
@@ -25,3 +26,5 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 app.use('/api', proyectosRouter);
 app.use('/api', certificadosRouter);
+app.use('/api', consultasRouter);
+
