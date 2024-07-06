@@ -11,7 +11,7 @@ const CertificadoSchema = new Schema({
   institucion: {
     type: String,
     required: true,
-    minLength: 10,
+    minLength: 3,
     maxLength: 1000,
   },
   expedicion: {
