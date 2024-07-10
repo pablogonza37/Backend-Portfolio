@@ -14,7 +14,6 @@ const proyectoSchema = new Schema({
     },
     imagenesMuestra:{
         type:String,
-        required:true,
     },
     descripcion: {
         type: String,
