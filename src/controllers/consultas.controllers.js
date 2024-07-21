@@ -1,4 +1,5 @@
 import Consulta from "../database/model/consulta.js";
+import consultaRealizada from '../helpers/mensaje.js'
 
 export const listarConsultas = async(req, res) => {
     try {
@@ -23,10 +24,12 @@ export const listarConsultas = async(req, res) => {
 export const crearConsulta = async (req, res) => {
     try {
       const consultaNueva = new Consulta(req.body);
+      console.log(consultaNueva)
       await consultaNueva.save();
       res.status(201).json({
         mensaje: "La consulta fue agregada correctamente"
       })
+      consultaRealizada(consultaNueva.nombre, consultaNueva.email, consultaNueva.consulta, consultaNueva.fecha)
     } catch (error) {
       console.log(error);
       res.status(400).json({

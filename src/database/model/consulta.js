@@ -3,10 +3,10 @@ import mongoose, {Schema} from "mongoose";
 const consultaSchema = new Schema({
     nombre:{
         type: String,
-        required: true,
-        unique: true,
+        required: true, 
         minLength:2,
-        maxLength:50
+        maxLength:50,
+        unique: false
     },
     email: {
         type: String,
@@ -20,7 +20,7 @@ const consultaSchema = new Schema({
     },
     fecha: {
         type: String,
-        required: true,
+        
     } 
 })
 
